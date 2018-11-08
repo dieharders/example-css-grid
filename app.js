@@ -2,37 +2,39 @@
 var e = document.getElementById('example1');
 
 function doGridGap(btn) {
-    var toggle = btn.getAttribute('toggle');
-    if (toggle == undefined || toggle == 'false') {
+    var toggle = btn.dataset.toggle;
+
+    if (toggle == 'false' || toggle == null) {
         e.style.gridGap = '4px';
-        btn.setAttribute('toggle', 'true');
+        btn.dataset.toggle = 'true';
     } else {
         e.style.gridGap = 'initial';
-        btn.setAttribute('toggle', 'false');
+        btn.dataset.toggle = 'false';
     }
 }
 
 function doJustify(btn) {
-    var toggle = btn.getAttribute('toggle');
-    if (toggle == undefined || toggle == 'false') {
+    var toggle = btn.dataset.toggle;
+
+    if (toggle == 'false' || toggle == null) {
         e.style.justifyContent = 'end';
-        btn.setAttribute('toggle', 'true');
+        btn.dataset.toggle = 'true';
     } else {
         e.style.justifyContent = 'initial';
-        btn.setAttribute('toggle', 'false');
+        btn.dataset.toggle = 'false';
     }
 }
 
 function doJustifySelf(btn) {
-    var toggle = btn.getAttribute('toggle');
+    var toggle = btn.dataset.toggle;
     var item = e.children[0];
     
-    if (toggle == undefined || toggle == 'false') {
+    if (toggle == 'false' || toggle == null) {
         item.style.justifySelf = 'start';
-        btn.setAttribute('toggle', 'true');
+        btn.dataset.toggle = 'true';
     } else {
         item.style.justifySelf = 'initial';
-        btn.setAttribute('toggle', 'false');
+        btn.dataset.toggle = 'false';
     }
 }
 
@@ -42,5 +44,10 @@ function resetAll() {
     // Remove styling from each grid item
     for (let index = 0; index < e.children.length; index++) {
         e.children[index].removeAttribute('style');
+    }
+    // Remove all button attributes
+    var ch = document.getElementsByClassName('plate');
+    for (let index = 0; index < ch.length; index++) {
+        ch[index].removeAttribute('data-toggle');
     }
 }
