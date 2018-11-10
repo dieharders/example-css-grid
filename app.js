@@ -1,3 +1,8 @@
+// Banner stuff
+function goGitHub() {
+    window.open('https://github.com/dieharders/example-css-grid', '_blank');
+}
+
 // Grid container
 var e = document.getElementById('example1');
 
