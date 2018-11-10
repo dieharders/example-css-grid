@@ -7,4 +7,4 @@ A simple, interactive example of CSS Grid in action.
 - Displays an example implementaion of CSS Grid and its' code.
 - A few buttons that apply different CSS rules to the Grid.
 
-![Preview](https://github.com/dieharders/example-css-grid/blob/master/preview.jpg)
+![Preview](https://github.com/dieharders/example-css-grid/blob/master/preview.png)
