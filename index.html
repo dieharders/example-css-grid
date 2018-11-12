@@ -16,7 +16,7 @@
           <div style="display: inline-block; width: 64px; height: 64px;"><img src="./icon.svg" width="64px" height="64px"></div>
           <h1>CSS Grid</h1>
           <br>
-          <span class="plate">Demonstrate CSS Grid with an interactive sample.</span>
+          <span class="plate">Learn CSS Grid with an interactive sample.</span>
           
           <div style="float: right; margin: 8px;">
             <button onclick="goGitHub()">👁️ View on GitHub</button>
@@ -24,71 +24,55 @@
         </div>
 
       </div>
-      <!-- Code Examples Here -->
-      <div id="example1" class="container">
-        <div class="item-a">header</div>
-        <div class="item-b">main</div>
-        <div class="item-c">sidebar</div>
-        <div class="item-d">footer</div>
-        <div class="item-e">empty</div>
-      </div>
-
-      <br>
 
       <div class="codeSpacer">
-      <div class="exampleCode-Container">
-          <div class="codeType">Try it</div>
-          <code>
-            Set spacing between grid elements. <button class="plate" onclick="doGridGap(this)">grid-gap: 4px;</button>
-            <br>
-            Justify entire grid to right side. <button class="plate" onclick="doJustify(this)">justify-content: end;</button>
-            <br>
-            Justify a grid item to left side. <button class="plate" onclick="doJustifySelf(this)">justify-self: start;</button>
-            <br>
-            Reset all styling. <button class="plate" onclick="resetAll()">♻️ Reset</button>
-          </code>
-      </div>
-
-      <div class="exampleCode-Container">
-        <div class="codeType">CSS</div>
+      <div class="exampleCode-Container" style="grid-area: cont">
+        <div class="codeType">CSS-Grid Container</div>
         <code><pre>
 .container {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
+  grid-gap: 0;
   grid-template-areas: 
       "header header header header"
       "main . . sidebar"
       "main footer footer footer";
-  width: 200px;
-  height: 150px;
-}
-.item-a {
-  grid-area: header;
-}
-.item-b {
-  grid-area: main;
-}
-.item-c {
-  grid-area: sidebar;
-}
-.item-d {
-  grid-area: footer;
 }</pre></code>
       </div>
 
-      <div class="exampleCode-Container">
-        <div class="codeType">HTML</div>
+      <div class="exampleCode-Container" style="grid-area: item">
+        <div class="codeType">CSS-Grid Items</div>
         <code><pre>
-&ltdiv class="container"&gt
-  &ltdiv class="item-a"&gtheader&lt/div&gt
-  &ltdiv class="item-b"&gtmain&lt/div&gt
-  &ltdiv class="item-c"&gtsidebar&lt/div&gt
-  &ltdiv class="item-d"&gtfooter&lt/div&gt
-&lt/div&gt</pre></code>
+grid-area: footer;
+background-color: #1eeea2;
+border: 4px solid grey;</pre></code>
+      </div>
+
+      <div class="exampleCode-Container" style="grid-area: try">
+        <div class="codeType">Try it</div>
+        <code>
+          <button class="plate" onclick="doGridGap(this)">grid-gap: 4px;</button>Set spacing between grid elements.
+          <br>
+          <button class="plate" onclick="doJustify(this)">justify-content: end;</button>Justify entire grid to right side.
+          <br>
+          <button class="plate" onclick="doJustifySelf(this)">justify-self: start;</button>Justify a grid item to left side.
+          <br>
+          <button class="plate" onclick="resetAll()">♻️ Reset</button>Reset all styling.
+        </code>
       </div>
 
     </div>
+
+    <!-- Code Examples Here -->
+    <div id="example1" class="container">
+      <div class="item-a">header</div>
+      <div class="item-b">main</div>
+      <div class="item-c">sidebar</div>
+      <div class="item-d">footer</div>
+      <div class="item-e">empty</div>
+    </div>
+
     </div>
     <!-- END Master Container DIV -->
     <script type="text/javascript" src="./app.js"></script>

@@ -115,6 +115,12 @@ button {
     text-decoration: none;
     border-radius:  4px;
     overflow: hidden;
+
+	-webkit-transition: all 0.25s ease-in;
+	-moz-transition: all 0.25s ease-in;
+	-ms-transition: all 0.25s ease-in;
+	-o-transition: all 0.25s ease-in;
+	transition: all 0.25s ease-in;
 }
 button:hover {
     background-color: #d8d8d8;
@@ -122,42 +128,67 @@ button:hover {
 }
 
 .codeSpacer {
-    display: block;
+    display: grid;
+    position: relative;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "cont item"
+        "cont try";
+    grid-gap: 1em;
+
     margin: auto;
+    padding: 16px;
     width: auto;
-    text-align: center;
+    height: auto;
+    text-align: center; /* Centers child elements */
 }
 .exampleCode-Container {
-    display: inline-block;
+    display: block;
     position: relative;
-    margin: 16px;
-    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    margin: auto;
     overflow: hidden;
     text-align: left;
+    overflow: auto;
 }
 .codeType {
     display: block;
     color: #e8eb2f;
     background-color: #7a6eff;
     width: 100%;
-    margin: 0px;
+    height: auto;
+    margin: auto;
     padding: 4px;
+    padding-left: 12px;
     font-family: 'Roboto', sans-serif;
     font-size: 10pt;
     font-weight: bold;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 code {
-    display: inline-block;
+    display: block;
     width: 100%;
-    padding: 8px;
+    height: 100%;
+    padding: 12px;
     color: #f7f7f7;
     background-color: #242424;
-    overflow: auto;    
+    overflow: auto;
 }
     code, pre {
         font-family: 'Roboto', sans-serif;
         font-weight: bold;
         font-size: 11pt;
+
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    pre {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
 /****************/
@@ -171,6 +202,16 @@ code {
     border-color: grey;
     border-width: 4px;
     padding: 8px;
+    margin: 0;
+    min-height: 120px;
+    line-height: 120px;
+    justify-self: auto;
+
+	-webkit-transition: all 0.25s ease-in;
+	-moz-transition: all 0.25s ease-in;
+	-ms-transition: all 0.25s ease-in;
+	-o-transition: all 0.25s ease-in;
+	transition: all 0.25s ease-in;
 }
     .item-a {
         grid-area: header;
@@ -197,23 +238,43 @@ code {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
+    grid-gap: 0;
     grid-template-areas: 
         "header header header header"
         "main empty empty sidebar"
         "main footer footer footer";
-    width: 20%;
+    justify-content: stretch;
+
+    width: auto;
     min-width: 250px;
     height: auto;
-
-    margin: auto;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 16px;
+    margin-top: 0;
     padding: 0px;
     background-color: #c4c4c4;
     border-style: solid;
-    border-color: grey;
+    border-color: lightgrey;
     border-width: 4px;
     overflow: hidden;
+
+	-webkit-transition: all 0.25s ease-in;
+	-moz-transition: all 0.25s ease-in;
+	-ms-transition: all 0.25s ease-in;
+	-o-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in;
+    
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+/* Style changes for 'Try it' buttons */
+.gridGap {
+    grid-gap: 8px;
+}
+.justifyContent {
+    justify-content: end;
+}
+.justifySelf {
+    justify-self: start;
 }
 
 /* Responsive */
@@ -233,18 +294,14 @@ code {
     .container {
         display: grid;
         width: auto;
-        margin: 16px;
-    }
-    .exampleCode-Container {
-        display: block;
-        width: auto;
     }
     code, pre {
         font-size: 14pt;
     }
     .codeSpacer {
-        display: block;
-        width: auto;
-        margin: auto;
+        grid-template-areas: 
+        "cont"
+        "item"
+        "try";
     }
 }

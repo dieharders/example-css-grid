@@ -3,17 +3,18 @@ function goGitHub() {
     window.open('https://github.com/dieharders/example-css-grid', '_blank');
 }
 
-// Grid container
+// Grid container reference
 var e = document.getElementById('example1');
 
+// 'Try it' buttons
 function doGridGap(btn) {
     var toggle = btn.dataset.toggle;
 
     if (toggle == 'false' || toggle == null) {
-        e.style.gridGap = '4px';
+        e.classList.add('gridGap');
         btn.dataset.toggle = 'true';
     } else {
-        e.style.gridGap = 'initial';
+        e.classList.remove('gridGap');
         btn.dataset.toggle = 'false';
     }
 }
@@ -22,10 +23,10 @@ function doJustify(btn) {
     var toggle = btn.dataset.toggle;
 
     if (toggle == 'false' || toggle == null) {
-        e.style.justifyContent = 'end';
+        e.classList.add('justifyContent');
         btn.dataset.toggle = 'true';
     } else {
-        e.style.justifyContent = 'initial';
+        e.classList.remove('justifyContent');
         btn.dataset.toggle = 'false';
     }
 }
@@ -33,22 +34,26 @@ function doJustify(btn) {
 function doJustifySelf(btn) {
     var toggle = btn.dataset.toggle;
     var item = e.children[0];
-    
+
     if (toggle == 'false' || toggle == null) {
-        item.style.justifySelf = 'start';
+        //item.style.justifySelf = 'start';
+        item.classList.add('justifySelf');
         btn.dataset.toggle = 'true';
     } else {
-        item.style.justifySelf = 'initial';
+        //item.style.justifySelf = 'initial';
+        item.classList.remove('justifySelf');
         btn.dataset.toggle = 'false';
     }
 }
 
 function resetAll() {
     // Remove styling from grid container
-    e.removeAttribute('style');
+    e.classList.remove('gridGap');
+    e.classList.remove('justifyContent');
     // Remove styling from each grid item
     for (let index = 0; index < e.children.length; index++) {
-        e.children[index].removeAttribute('style');
+        let child = e.children[index];
+        child.classList.remove('justifySelf');
     }
     // Remove all button attributes
     var ch = document.getElementsByClassName('plate');
