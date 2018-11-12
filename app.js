@@ -7,6 +7,22 @@ function goGitHub() {
 var g = document.getElementById('example1');
 
 // 'Try it' buttons
+function doAddItem() {
+    let rand = Math.random();
+    let colorList = ['#38a5ff', '#ffe54f', '#eb4b2f', '#1eeea2', '#f7f7f7'];
+    let col = colorList[Math.floor(rand * colorList.length)];
+    let nameList = ['header', 'empty', 'footer', 'main', 'sidebar'];
+    let name = nameList[Math.floor(rand * nameList.length)];
+    let classList = ['item-a', 'item-b', 'item-c', 'item-d', 'item-e'];
+    let cls = classList[Math.floor(rand * classList.length)];
+    // Make new item with random class
+    let item = document.createElement('div');
+    item.classList.add('item-n');
+    item.style.backgroundColor = col;
+    item.innerHTML = 'new';
+    g.appendChild(item);
+}
+
 function doGridGap(btn) {
     var toggle = btn.dataset.toggle;
 
@@ -63,14 +79,25 @@ function resetAll() {
     // Reset code input divs
     grid.innerHTML = gridCssString;
     items.innerHTML = gridItemCss;
+    // Reset html
+    g.innerHTML = htmlString;
 }
 
 // LOGIC //
 //
+// Set HTML grid items
+var htmlString = 
+`
+<div class="item-a">header</div>
+<div class="item-b">main</div>
+<div class="item-c">sidebar</div>
+<div class="item-d">footer</div>
+<div class="item-e">empty</div>
+`;
 // Set grid container
 var gridCssString =
 `display: grid;
-grid-template-columns: auto;
+grid-template-columns: 1fr 2fr 2fr 1fr;
 grid-template-rows: auto;
 grid-gap: 0px;
 grid-template-areas:
@@ -78,14 +105,14 @@ grid-template-areas:
   "main empty empty sidebar"
   "main footer footer footer";`;
 var grid = document.getElementById('gridCode');
-//g.style.cssText = gridCssString;
 grid.innerHTML = gridCssString;
 
 // Set grid items
 var randItemTemplate = `grid-area: footer;`;
 var randItemColor = `background-color: #1eeea2;`;
 var gridItemCss =
-`border: 4px solid #808080;
+`border-width: 4px;
+border-style: solid;
 `;
 var items = document.getElementById('gridItemCode');
 items.innerHTML = gridItemCss;
