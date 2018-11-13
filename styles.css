@@ -266,7 +266,7 @@ code, .buttonarea {
     grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-rows: auto;
     grid-gap: 0px;
-    grid-template-areas: 
+    grid-template-areas:
         "header header header header"
         "main empty empty sidebar"
         "main footer footer footer";
@@ -275,6 +275,7 @@ code, .buttonarea {
     width: auto;
     min-width: 250px;
     height: auto;
+    min-height: 250px;
     margin: 16px;
     margin-top: 0;
     padding: 0px;

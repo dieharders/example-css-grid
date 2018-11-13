@@ -22,6 +22,10 @@ function doAddItem() {
     item.innerHTML = 'new';
     g.appendChild(item);
 }
+function doRemoveItem() {
+    let child = g.children[g.children.length-1];
+    g.removeChild(child);
+}
 
 function doGridGap(btn) {
     var toggle = btn.dataset.toggle;
