@@ -5,7 +5,7 @@ A simple, interactive example of CSS Grid in action.
 
 ## What it does:
 - Displays an example implementation of CSS Grid and its' code.
-- Interactive text area for changing css code in real-time.
+- Interactive text area for changing CSS code in real-time.
 - A few buttons that apply different CSS rules to the Grid.
 
 ![Preview](https://github.com/dieharders/example-css-grid/blob/master/preview.png)
