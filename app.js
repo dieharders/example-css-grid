@@ -115,7 +115,8 @@ grid.innerHTML = gridCssString;
 var randItemTemplate = `grid-area: footer;`;
 var randItemColor = `background-color: #1eeea2;`;
 var gridItemCss =
-`border-width: 4px;
+`justify-self: auto; /* start, end, center */
+border-width: 4px;
 border-style: solid;
 `;
 var items = document.getElementById('gridItemCode');
